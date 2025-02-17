@@ -1,0 +1,333 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-green: #2F4F4F;
+    --accent-green: #3e6363;
+    --light-gray: #f5f5f5;
+    --text-dark: #333;
+    --card-bg: rgba(255, 255, 255, 0.9);
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: var(--light-gray);
+    color: var(--text-dark);
+    min-height: 100vh;
+}
+
+.app-container {
+    min-height: 100vh;
+    background: linear-gradient(45deg, #f5f5f5 50%, #dae7e7 50%);
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    margin: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+    align-items: center;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.nav-left a, .nav-right a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.theme-toggle {
+    display: flex;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+/* Main Content */
+.main-content {
+    display: grid;
+    grid-template-columns: 35% 35%;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+}
+
+.hero-section {
+    grid-column: 1 / -1;
+}
+
+.card-grid {
+    width: 100%;
+    grid-column: 1 / 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Change to 2 columns */
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.right-column {
+    width: 100%;
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form-section {
+    width: 100%;
+}
+
+.about-section {
+    width: 100%;
+}
+
+/* Bottom Sections: Info Cards and Spotlight */
+.bottom-sections {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* 3 columns for info cards, 1 column for spotlight */
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Hero Section */
+.main-title {
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: -2px;
+}
+
+.hero-text {
+    font-size: 1.2rem;
+    max-width: 500px;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem; /* Add this line */
+}
+
+.btn-primary, .btn-secondary {
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-green);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var (--text-dark);
+}
+
+/* Join Card */
+.join-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 20px;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.join-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.join-form input {
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.btn-submit {
+    background-color: var(--primary-green);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Responsive Design */
+
+
+/* Info Cards */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Change to 2 columns */
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.info-card {
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    color: var(--text-dark);
+    padding: 1.5rem;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 200px;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.info-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.info-card p {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 0.75rem;
+}
+
+.info-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.5rem;
+}
+
+.info-card ul li {
+    margin-bottom: 0.6rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.info-card ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--primary-green);
+    font-weight: bold;
+}
+
+.info-card ul li a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    font-size: 1.05rem;
+}
+
+.info-card ul li a:hover {
+    color: var(--primary-green);
+    padding-left: 5px;
+}
+
+.card-btn {
+    display: none;
+}
+
+/* Spotlight Section */
+.spotlight {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.spotlight h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.spotlight p {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+}
+
+@media (max-width: 1200px) {
+    .card-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .bottom-sections {
+        grid-template-columns: 1fr; /* Stack on small screens */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .hero-section, .form-section, .card-grid, .about-section {
+        grid-column: 1 / -1;
+    }
+
+    .card-grid, .right-column {
+        grid-column: 1 / -1;
+    }
+
+    .top-nav {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .main-title {
+        font-size: 3rem;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-left, .nav-right {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .app-container {
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+}
+
