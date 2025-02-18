@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,10 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <div class="app-container">
         <nav class="top-nav">
@@ -90,13 +93,44 @@
                 <section class="form-section">
                     <div class="join-card">
                         <h2>Join Waitlist</h2>
-                        <form class="join-form">
-                            <input type="text" placeholder="Full Name">
-                            <input type="text" placeholder="Email Address">
-                            <input type="text" placeholder="How Did You Hear About Us?">
-                            <input type="text" placeholder="Give Us Feedback!">
-                            <button type="submit" class="btn-submit">Join Now</button>
+                        <form class="join-form" id="joinForm">
+                            <div class="field">
+                                <!-- <label class="label">Name</label> -->
+                                <div class="control">
+                                    <input class="input" type="text" placeholder="Name" name="Name" />
+                                </div>
+                            </div>
+                            <div class="field">
+                                <!-- <label class="label">Email</label> -->
+                                <div class="control">
+                                    <input class="input" type="email" placeholder="Your Email" name="Email" />
+                                </div>
+                            </div>
+                            <div class="field">
+                                <!-- <label class="label">Source</label> -->
+                                <div class="control">
+                                    <input class="input" type="text" placeholder="How Did You Hear About Us?"
+                                        name="Source" />
+                                </div>
+                            </div>
+                            <div class="field">
+                                <!-- <label class="label">Message</label> -->
+                                <div class="control">
+                                    <input class="input" type="text" placeholder="Give Us Feedback!" name="Message" />
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-submit" id="submit-button">Join Now</button>
                         </form>
+                        <div id="message" style="
+                            display: none;
+                            margin: 20px;
+                            font-weight: bold;
+                            color: #2F4F4F;
+                            padding: 8px;
+                            background-color: rgb(238, 238, 238);
+                            border-radius: 4px;
+                            border-color: aquamarine;
+                        "></div>
                     </div>
                 </section>
 
@@ -111,5 +145,73 @@
             </div>
         </main>
     </div>
+
+
+    <script>
+        document.getElementById("joinForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            document.getElementById("message").textContent = "Submitting..";
+            document.getElementById("message").style.display = "block";
+            document.getElementById("submit-button").disabled = true;
+
+            // Collect the form data
+            var formData = new FormData(this);
+            // Add timestamp
+            formData.append("Timestamp", new Date().toISOString());
+            var keyValuePairs = [];
+            for (var pair of formData.entries()) {
+                keyValuePairs.push(pair[0] + "=" + pair[1]);
+            }
+
+            var formDataString = keyValuePairs.join("&");
+
+            // Send a POST request to your Google Apps Script
+            fetch(
+                "https://script.google.com/macros/s/AKfycbwUwZe-LDgO2YPB38y-GPyd8maLkgrylW2OH8MI8JFJ6TmG8nW6P0uXRPMCXaJf67w9/exec",
+                {
+                    redirect: "follow",
+                    method: "POST",
+                    body: formDataString,
+                    headers: {
+                        "Content-Type": "text/plain;charset=utf-8",
+                    },
+                }
+            )
+                .then(function (response) {
+                    // Check if the request was successful
+                    if (response) {
+                        return response; // Assuming your script returns JSON response
+                    } else {
+                        throw new Error("Failed to submit the form.");
+                    }
+                })
+                .then(function (data) {
+                    // Display a success message
+                    document.getElementById("message").textContent =
+                        "Submitted!";
+                    document.getElementById("message").style.display = "block";
+                    document.getElementById("message").style.backgroundColor = "green";
+                    document.getElementById("message").style.color = "beige";
+                    document.getElementById("submit-button").disabled = false;
+                    document.getElementById("joinForm").reset();
+
+                    setTimeout(function () {
+                        document.getElementById("message").textContent = "";
+                        document.getElementById("message").style.display = "none";
+                    }, 2600);
+                })
+                .catch(function (error) {
+                    // Handle errors, you can display an error message here
+                    console.error(error);
+                    document.getElementById("message").textContent =
+                        "An error occurred while submitting the form.";
+                    document.getElementById("message").style.display = "block";
+                });
+        });
+    </script>
+
 </body>
+
 </html>
+
+
