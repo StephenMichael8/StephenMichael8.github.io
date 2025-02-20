@@ -13,17 +13,20 @@
     <div class="app-container">
         <nav class="top-nav">
             <div class="nav-left">
-                <a href="coming-soon.html" class="logo">Propel</a>
-                <a href="coming-soon.html">Global Issues</a>
-                <a href="coming-soon.html">Build & Fund Solutions</a>
-                <a href="coming-soon.html">Projects in Action</a>
-                <a href="coming-soon.html">Community</a>
+                <a href="/" class="logo">Propel</a>
+                <a href="#issues">Global Issues</a>
+                <a href="#solutions">Build & Fund Solutions</a>
+                <a href="#projects">Projects in Action</a>
+                <a href="#community">Community</a>
             </div>
             <div class="nav-right">
                 <div class="social-icons">
-                    <a href="coming-soon.html"><img src="Images/LinkedIn_logo.png.webp" alt="LinkedIn" width="24" height="24"></a>
-                    <a href="coming-soon.html"><img src="Images/xicon.png" alt="X" width="24" height="24"></a>
-                    <a href="coming-soon.html"><img src="Images/instagram_icon.png" alt="Instagram" width="24" height="24"></a>
+                    <a href="#"><img src="Images/LinkedIn_logo.png.webp" alt="LinkedIn" width="24" height="24"></a>
+                    <a href="#"><img src="Images/xicon.png" alt="X" width="24" height="24"></a>
+                    <a href="#"><img src="Images/instagram_icon.png" alt="Instagram" width="24" height="24"></a>
+                </div>
+                <div class="theme-toggle">
+                    <span>○</span> <span>◐</span>
                 </div>
             </div>
         </nav>
@@ -47,9 +50,9 @@
                         <h2>🌍 Discover Global Issues</h2>
                         <p>Understand the biggest challenges and how Propel connects innovators to solutions.</p>
                         <ul>
-                            <li><a href="coming-soon.html">Climate Resilience - Adapting to climate risks.</a></li>
-                            <li><a href="coming-soon.html">Sustainable Infrastructure - Smart cities & green mobility.</a></li>
-                            <li><a href="coming-soon.html">Resource Equity - Clean water & food security.</a></li>
+                            <li><a href="#">Climate Resilience - Adapting to climate risks.</a></li>
+                            <li><a href="#">Sustainable Infrastructure - Smart cities & green mobility.</a></li>
+                            <li><a href="#">Resource Equity - Clean water & food security.</a></li>
                         </ul>
                     </div>
 
@@ -57,9 +60,9 @@
                         <h2>💡 Build & Fund Solutions</h2>
                         <p>Propel helps fund, prototype, and scale high-impact projects worldwide.</p>
                         <ul>
-                            <li><a href="coming-soon.html">Funding Opportunities - Grants & VC funding.</a></li>
-                            <li><a href="coming-soon.html">Innovation Lab - Develop real-world solutions.</a></li>
-                            <li><a href="coming-soon.html">Global Network - Connect with changemakers.</a></li>
+                            <li><a href="#">Funding Opportunities - Grants & VC funding.</a></li>
+                            <li><a href="#">Innovation Lab - Develop real-world solutions.</a></li>
+                            <li><a href="#">Global Network - Connect with changemakers.</a></li>
                         </ul>
                     </div>
 
@@ -67,9 +70,9 @@
                         <h2>🌎 Projects in Action</h2>
                         <p>Explore initiatives that are shaping the future right now.</p>
                         <ul>
-                            <li><a href="coming-soon.html">Urban Farming in Mumbai - City agriculture solutions.</a></li>
-                            <li><a href="coming-soon.html">Clean Water in Belém - Filtration tech for access.</a></li>
-                            <li><a href="coming-soon.html">Renewable Energy in Kenya - Solar for off-grid areas.</a></li>
+                            <li><a href="#">Urban Farming in Mumbai - City agriculture solutions.</a></li>
+                            <li><a href="#">Clean Water in Belém - Filtration tech for access.</a></li>
+                            <li><a href="#">Renewable Energy in Kenya - Solar for off-grid areas.</a></li>
                         </ul>
                     </div>
 
@@ -77,8 +80,8 @@
                         <h2>🤝 Join the Propel Community</h2>
                         <p>A movement for founders, investors, and action-driven changemakers.</p>
                         <ul>
-                            <li><a href="coming-soon.html">Grassroots Initiatives - Supporting local impact.</a></li>
-                            <li><a href="coming-soon.html">Propel Hub - Global knowledge-sharing space.</a></li>
+                            <li><a href="#">Grassroots Initiatives - Supporting local impact.</a></li>
+                            <li><a href="#">Propel Hub - Global knowledge-sharing space.</a></li>
                         </ul>
                     </div>
                 </section>
@@ -122,16 +125,16 @@
                     <h2>🌟 Our Partners</h2>
                     <p>We collaborate with incubators, nonprofits, and green-tech startups worldwide.</p>
                     <ul>
-                        <li><a href="coming-soon.html">XYZ - Crowdfunding for climate solutions.</a></li>
-                        <li><a href="coming-soon.html">XYZ - Startup accelerator for social impact.</a></li>
-                        <li><a href="coming-soon.html">XYZ - Open innovation network.</a></li>
+                        <li><a href="#">XYZ - Crowdfunding for climate solutions.</a></li>
+                        <li><a href="#">XYZ - Startup accelerator for social impact.</a></li>
+                        <li><a href="#">XYZ - Open innovation network.</a></li>
                     </ul>
-                    <a href="coming-soon.html" class="btn-secondary">View All Partners</a>
+                    <a href="#" class="btn-secondary">View All Partners</a>
                 </div>
 
                 <div class="info-card">
                     <h2>✨ Spotlight of the Day</h2>
-                    <p><a href="coming-soon.html">Clean Water</a>: Learn about the challenges and solutions related to water access in urban areas.</p>
+                    <p><a href="https://apnews.com/article/8b8c6746abb04415cd98f05b42912967">Clean Water</a>: Learn about the challenges and solutions related to water access in urban areas.</p>
                 </div>
             </div>
         </main>
@@ -140,15 +143,6 @@
     <script>
         document.getElementById("joinForm").addEventListener("submit", function (e) {
             e.preventDefault();
-            // Check if any input is empty
-            var inputs = this.querySelectorAll("input.input");
-            for (var i = 0; i < inputs.length; i++) {
-                if (inputs[i].value.trim() === "") {
-                    document.getElementById("message").textContent = "Please fill out all fields.";
-                    document.getElementById("message").style.display = "block";
-                    return;
-                }
-            }
             document.getElementById("message").textContent = "Submitting..";
             document.getElementById("message").style.display = "block";
             document.getElementById("submit-button").disabled = true;
